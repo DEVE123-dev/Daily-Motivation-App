@@ -35,14 +35,14 @@ while [ -h "$PRG" ] ; do
         PRG=`dirname "$PRG"`"/$link"
     fi
 done
-SAVED="$(cd \"$(dirname \"$PRG\")\" && pwd)"
-APP_HOME="$(cd \"$(dirname \"$SAVED\")\" && pwd)"
+SAVED="$(cd "$(dirname "$PRG")" && pwd)"
+APP_HOME="$(cd "$(dirname "$SAVED")" && pwd)"
 
 APP_NAME="Gradle"
 APP_BASE_NAME=`basename "$0"`
 
 # Add default JVM options here. You can also use JAVA_OPTS and GRADLE_OPTS to pass JVM options to this script.
-DEFAULT_JVM_OPTS='\" -Xmx64m -Xms64m \"\'" '
+DEFAULT_JVM_OPTS='-Xmx64m -Xms64m'
 
 # Use the maximum available, or set MAX_FD != -1 to use that value.
 MAX_FD="maximum"
@@ -63,7 +63,7 @@ darwin=false
 msys=false
 cygwin=false
 nonstop=false
-case \"$(uname)\" in
+case "$(uname)" in
   Darwin* )
     darwin=true
     ;;
@@ -117,28 +117,27 @@ ulimit -n $MAX_FD
 [ $? -eq 0 ] || warn "Could not set maximum file descriptor limit: $MAX_FD"
 
 if [ -z "$GRADLE_HOME" ] ; then
-    GRADLE_HOME=\"$APP_HOME/gradle\"
+    GRADLE_HOME="$APP_HOME/gradle"
 fi
 
 export GRADLE_HOME
-export PATH=\"$GRADLE_HOME/bin:$PATH\"
+export PATH="$GRADLE_HOME/bin:$PATH"
 
 CLASSPATH=$APP_HOME/gradle/wrapper/gradle-wrapper.jar
 
 # Determine the Java command to use to start the JVM.
 if [ -n "$JAVA_HOME" ] ; then
     if [ -x "$JAVA_HOME/jre/sh/java" ] ; then
-        # IBM's JDK on AIX uses strange locations for the executables
-        JAVACMD=\"$JAVA_HOME/jre/sh/java\"
+        JAVACMD="$JAVA_HOME/jre/sh/java"
     else
-        JAVACMD=\"$JAVA_HOME/bin/java\"
+        JAVACMD="$JAVA_HOME/bin/java"
     fi
     if [ ! -x "$JAVACMD" ] ; then
-        die \"ERROR: JAVA_HOME is set to \"$JAVA_HOME\" but there is no 'java' executable in \"$JAVA_HOME/bin\".\"
+        die "ERROR: JAVA_HOME is set to \"$JAVA_HOME\" but there is no 'java' executable in \"$JAVA_HOME/bin\"."
     fi
 else
-    JAVACMD=\"java\"
-    command -v java >/dev/null 2>&1 || die \"ERROR: JAVA_HOME is not set and no 'java' command could be found in your PATH.\"
+    JAVACMD="java"
+    command -v java >/dev/null 2>&1 || die "ERROR: JAVA_HOME is not set and no 'java' command could be found in your PATH."
 fi
 
 if [ -z "$JAVA_OPTS" ] ; then
@@ -147,9 +146,8 @@ fi
 
 CLASSPATH=$APP_HOME/gradle/wrapper/gradle-wrapper.jar
 
-# when everything else fails, use the full path to find gradle
 if [ -z "$GRADLE_HOME" ] ; then
-    GRADLE_HOME=\"$APP_HOME/gradle\"
+    GRADLE_HOME="$APP_HOME/gradle"
 fi
 
-exec \"$JAVACMD\" $DEFAULT_JVM_OPTS -classpath \"$CLASSPATH\" org.gradle.wrapper.GradleWrapperMain \"$@\"
+exec "$JAVACMD" $DEFAULT_JVM_OPTS -classpath "$CLASSPATH" org.gradle.wrapper.GradleWrapperMain "$@"

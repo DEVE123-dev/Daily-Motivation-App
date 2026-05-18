@@ -57,7 +57,7 @@ fun HomeScreen(viewModel: QuoteViewModel, paddingValues: PaddingValues) {
                 )
 
                 Text(
-                    text = "— ${currentQuote!!.author}",
+                    text = "-- ${currentQuote!!.author}",
                     fontSize = 16.sp,
                     textAlign = TextAlign.Right,
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
@@ -89,7 +89,7 @@ fun HomeScreen(viewModel: QuoteViewModel, paddingValues: PaddingValues) {
                         onClick = {
                             val shareIntent = Intent().apply {
                                 action = Intent.ACTION_SEND
-                                putExtra(Intent.EXTRA_TEXT, "\"${currentQuote!!.text}\" — ${currentQuote!!.author}")
+                                putExtra(Intent.EXTRA_TEXT, "\"${currentQuote!!.text}\" -- ${currentQuote!!.author}")
                                 type = "text/plain"
                             }
                             context.startActivity(Intent.createChooser(shareIntent, "Share Quote"))

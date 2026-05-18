@@ -1,17 +1,17 @@
-# 🚀 Daily Motivation App
+# Daily Motivation App
 
 A beautiful, lightweight Android app built with **100% Kotlin** and **Jetpack Compose** that displays motivational quotes and lets you save your favorites.
 
-## ✨ Features
+## Features
 
-- 📱 **Modern UI** - Built with Jetpack Compose and Material Design 3
-- 💾 **Offline Support** - Works without internet using Room database
-- ❤️ **Favorites System** - Save and manage your favorite quotes
-- 📤 **Share Functionality** - Share quotes via email, messaging apps, and more
-- 🎨 **Dark/Light Theme** - Automatic theme support based on system settings
-- 🏗️ **Clean Architecture** - MVVM pattern with proper separation of concerns
+- **Modern UI** - Built with Jetpack Compose and Material Design 3
+- **Offline Support** - Works without internet using Room database
+- **Favorites System** - Save and manage your favorite quotes
+- **Share Functionality** - Share quotes via email, messaging apps, and more
+- **Dark/Light Theme** - Automatic theme support based on system settings
+- **Clean Architecture** - MVVM pattern with proper separation of concerns
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 - **Language**: Kotlin
 - **UI Framework**: Jetpack Compose
@@ -21,7 +21,7 @@ A beautiful, lightweight Android app built with **100% Kotlin** and **Jetpack Co
 - **Minimum API Level**: 24 (Android 7.0+)
 - **Target API Level**: 34 (Android 14)
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 src/main/
@@ -48,7 +48,7 @@ src/main/
 │           └── QuoteRepository.kt   # Data layer abstraction
 ```
 
-## 🎯 Features Breakdown
+## Features Breakdown
 
 ### Home Screen
 - Displays today's quote (selected by day of year)
@@ -74,7 +74,7 @@ src/main/
 - **ViewModel**: Survives configuration changes
 - **Coroutines**: Async database operations on IO dispatcher
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 - Android Studio (2023.1 or later)
@@ -104,7 +104,7 @@ src/main/
    ./gradlew installDebug
    ```
 
-## 📱 Usage
+## Usage
 
 1. **View Today's Quote**: Open the app to see a featured quote
 2. **Save to Favorites**: Tap the heart icon to save the quote
@@ -112,7 +112,7 @@ src/main/
 4. **View Favorites**: Tap the "Favorites" tab to see all saved quotes
 5. **Remove from Favorites**: In the Favorites tab, tap the delete icon
 
-## 🎨 Customization
+## Customization
 
 ### Change Theme Colors
 Edit `src/main/kotlin/com/example/dailymotivation/ui/theme/Color.kt`:
@@ -130,7 +130,7 @@ private val seedQuotes = listOf(
 )
 ```
 
-## 📋 Dependencies
+## Dependencies
 
 - androidx.core:core-ktx:1.12.0
 - androidx.lifecycle:lifecycle-runtime-ktx:2.6.2
@@ -140,21 +140,21 @@ private val seedQuotes = listOf(
 - androidx.navigation:navigation-compose:2.7.5
 - org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3
 
-## 🧪 Testing
+## Testing
 
 Basic test dependencies included:
 - JUnit 4 for unit testing
 - Espresso for UI testing
 - Compose test utilities
 
-## 📖 Learning Resources
+## Learning Resources
 
 - [Jetpack Compose Documentation](https://developer.android.com/jetpack/compose/)
 - [Room Database Guide](https://developer.android.com/training/data-storage/room)
 - [ViewModel & LiveData](https://developer.android.com/topic/architecture/data-layer)
 - [Kotlin Coroutines](https://kotlinlang.org/docs/coroutines-overview.html)
 
-## 🔄 Future Enhancements
+## Future Enhancements
 
 - [ ] Daily notifications with new quotes
 - [ ] API integration for fresh quotes
@@ -165,18 +165,18 @@ Basic test dependencies included:
 - [ ] Quote of the Day widget
 - [ ] Cloud sync with Firebase
 
-## 📝 License
+## License
 
 This project is open source and available under the MIT License.
 
-## 👨‍💻 Contributing
+## Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
 
-## 📞 Support
+## Support
 
 For issues and questions, please open a GitHub Issue.
 
 ---
 
-**Built with ❤️ using Kotlin and Jetpack Compose**
+**Built using Kotlin and Jetpack Compose**

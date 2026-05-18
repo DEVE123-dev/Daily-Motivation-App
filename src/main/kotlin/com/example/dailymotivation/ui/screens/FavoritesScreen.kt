@@ -80,7 +80,7 @@ fun FavoritesScreen(viewModel: QuoteViewModel, paddingValues: PaddingValues) {
                                 modifier = Modifier.padding(bottom = 8.dp)
                             )
                             Text(
-                                text = "— ${quote.author}",
+                                text = "-- ${quote.author}",
                                 fontSize = 14.sp,
                                 color = MaterialTheme.colorScheme.onSurfaceVariant,
                                 modifier = Modifier.padding(bottom = 8.dp)

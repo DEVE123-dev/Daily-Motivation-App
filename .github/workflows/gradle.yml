@@ -1,0 +1,49 @@
+name: CI - Gradle Build
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      # Keep Gradle user home inside the repo workspace so cache paths are stable
+      GRADLE_USER_HOME: ${{ github.workspace }}/.gradle
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Ensure gradlew is executable
+        run: chmod +x ./gradlew
+
+      - name: Cache Gradle wrapper distributions
+        uses: actions/cache@v4
+        with:
+          path: |
+            ${{ github.workspace }}/.gradle/wrapper/dists
+          key: gradle-wrapper-dists-${{ hashFiles('**/gradle/wrapper/gradle-wrapper.properties') }}-${{ runner.os }}
+          restore-keys: |
+            gradle-wrapper-dists-${{ runner.os }}
+
+      - name: Cache Gradle caches
+        uses: actions/cache@v4
+        with:
+          path: |
+            ${{ github.workspace }}/.gradle/caches
+            ${{ github.workspace }}/.gradle/native
+          key: gradle-caches-${{ runner.os }}-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
+          restore-keys: |
+            gradle-caches-${{ runner.os }}
+
+      - name: Build with Gradle wrapper
+        run: ./gradlew --no-daemon build --stacktrace
